@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import './widgets/transactions/list_transaction.dart';
 import './models/transaction.dart';
-import './data/data_static.dart';
+import './widgets/charts/charts.dart';
 import './widgets/transactions/new_transaction.dart';
 
 void main() => runApp(MyApp());
@@ -95,7 +95,10 @@ class _MyHomePageState extends State<MyHomePage> {
       body: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: <Widget>[TransactionList(_userTransactions)],
+          children: <Widget>[
+            Chart(_recentTransaction),
+            TransactionList(_userTransactions),
+          ],
         ),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
